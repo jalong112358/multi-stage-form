@@ -14,22 +14,22 @@ var progressNode = {
   height: "35px",
   display: "flex",
 
-  backgroundColor: "#fff",
+  backgroundColor: "rgba(255, 255, 255, 0.35)",
   borderRadius: "50%"
 };
 var progressNodeActive = {
-  backgroundColor: "#F95700FF",
-  color: "#fff",
+  backgroundColor: "#ADEFD1FF",
+  color: "#00203FFF",
   transform: "scale(1.5)",
   transition: "all 500ms ease"
 };
 var nodeSeperator = {
   height: "2px",
   width: "210px",
-  backgroundColor: "#fff"
+  backgroundColor: "rgba(255, 255, 255, 0.35)"
 };
 var nodeSeperatorActive = {
-  backgroundColor: "#F95700FF",
+  backgroundColor: "#ADEFD1FF",
   transition: "background-color 500ms ease"
 };
 export default function Indicators() {

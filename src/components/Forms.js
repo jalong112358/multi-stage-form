@@ -3,15 +3,9 @@ import { Context } from "../contexts/Context";
 import PartOne from "./PartOne";
 import PartTwo from "./PartTwo";
 import PartThree from "./PartThree";
-
-import { useTransition, animated } from "react-spring";
+import Success from "./Success";
 
 export default function Forms() {
-  const transitions = useTransition({
-    from: { position: "absolute", opacity: 0 },
-    enter: { opacity: 1 },
-    leave: { opacity: 0 }
-  });
   return (
     <Context.Consumer>
       {context => {
@@ -19,15 +13,16 @@ export default function Forms() {
 
         return (
           <div id="forms">
-            <animated.div>
-              {currentStage === 1 ? (
-                <PartOne />
-              ) : currentStage === 2 ? (
-                <PartTwo />
-              ) : currentStage === 3 ? (
-                <PartThree />
-              ) : null}
-            </animated.div>
+            <div className={currentStage === 1 ? "form active" : "form"}>
+              <PartOne />
+            </div>
+            <div className={currentStage === 2 ? "form active" : "form"}>
+              <PartTwo />
+            </div>
+            <div className={currentStage === 3 ? "form active" : "form"}>
+              <PartThree />
+            </div>
+            {currentStage === 4 ? <Success /> : null}
           </div>
         );
       }}

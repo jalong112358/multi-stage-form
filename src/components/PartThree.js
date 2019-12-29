@@ -3,23 +3,53 @@ import { Context } from "../contexts/Context";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 
-import { useSpring, animated } from "react-spring";
+let inputStyles = {
+  marginBottom: "15px"
+};
 
 export default function PartThree() {
-  const props = useSpring({ opacity: 1, from: { opacity: 0 } });
   return (
     <Context.Consumer>
       {context => {
         const { changeStage } = context;
 
         return (
-          <animated.div style={props} className="form-part">
+          <div className="form-part">
             <p>Part 3</p>
-            <TextField id="standard-basic" label="Standard" fullWidth />
-            <Button variant="contained" onClick={changeStage}>
+            <TextField
+              style={inputStyles}
+              id="standard-basic"
+              label="First Name"
+              fullWidth
+            />
+            <TextField
+              style={inputStyles}
+              id="standard-basic"
+              label="Last Name"
+              fullWidth
+            />
+            <TextField
+              style={inputStyles}
+              id="standard-basic"
+              label="Email"
+              fullWidth
+            />
+            <TextField
+              style={inputStyles}
+              id="standard-basic"
+              label="Password"
+              fullWidth
+            />
+            <TextField
+              style={inputStyles}
+              id="standard-basic"
+              label="Confirm Password"
+              fullWidth
+            />
+            <Button variant="contained" onClick={changeStage} fullWidth>
               Default
             </Button>
-          </animated.div>
+          </div>
         );
       }}
     </Context.Consumer>
